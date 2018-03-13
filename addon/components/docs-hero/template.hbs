@@ -1,7 +1,7 @@
 <div class='docs-container'>
   <h1 class='docs-hero__heading'>
     {{#if hasBlock}}
-      {{yield}}
+      {{yield (hash isLogo=true)}}
     {{else if logo}}
       <span class='docs-hero__logo'>
         {{docs-logo logo=logo}}
@@ -11,4 +11,8 @@
     <span class='docs-hero__slim-heading'>{{slimHeading}}</span><span class='docs-hero__strong-heading'>{{strongHeading}}</span>
   </h1>
   <p class='docs-hero__byline'>{{byline}}</p>
+
+  {{#if (and hasBlock yieldMultiple)}}
+    {{yield (hash isBottom=true)}}
+  {{/if}}
 </div>

@@ -50,5 +50,7 @@ export default Component.extend({
     @argument byline
     @type String
   */
-  byline: ''
+  byline: '',
+
+  yieldMultiple: false,
 });
